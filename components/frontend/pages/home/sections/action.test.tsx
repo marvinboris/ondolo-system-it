@@ -18,13 +18,9 @@ describe("HomeActionSection", () => {
     const ctaButton = getByRole("link", { name: "Nous Contacter" });
     expect(ctaButton).toHaveAttribute("href", "/contact");
     expect(ctaButton).toHaveClass(
-      "rounded-none",
-      "text-primary-900",
-      "border",
-      "border-primary-900",
-      "px-10",
-      "py-2.5",
-      "bg-white"
+      ..."rounded-[7px] border border-primary-900 bg-white px-10 py-2.5 text-secondary-900 transition-all duration-200 md:border-0".split(
+        " "
+      )
     );
   });
 });
