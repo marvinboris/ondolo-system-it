@@ -37,7 +37,7 @@ export default function ArticleBlock({
           href={link}
           className="inline-flex items-center gap-1.5 text-sm text-primary-900"
         >
-          <span className="font-semibold">Lire la suite</span>
+          <span className="font-semibold border-b border-primary-900 leading-tight capitalize">Lire la suite</span>
           <PlayIcon className="w-2" />
         </Link>
       </p>

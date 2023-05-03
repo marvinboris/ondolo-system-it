@@ -49,6 +49,7 @@ const data = {
         </svg>
       ),
       label: "Création de Site Web",
+      description: `Incontournable pour les sites vitrines et Boutiques en ligne`,
     },
     {
       icon: ({ className = "" }) => (
@@ -91,6 +92,7 @@ const data = {
         </svg>
       ),
       label: "Développement d’applications Web",
+      description: `Incontournable pour les sites vitrines et Boutiques en ligne`,
     },
     {
       icon: ({ className = "" }) => (
@@ -117,6 +119,7 @@ const data = {
         </svg>
       ),
       label: "Développement d’applications mobile",
+      description: `Incontournable pour les sites vitrines et Boutiques en ligne`,
     },
     {
       icon: ({ className = "" }) => (
@@ -147,6 +150,7 @@ const data = {
         </svg>
       ),
       label: "Infographie",
+      description: `Incontournable pour les sites vitrines et Boutiques en ligne`,
     },
     {
       icon: ({ className = "" }) => (
@@ -169,15 +173,30 @@ const data = {
         </svg>
       ),
       label: "Support technique",
+      description: `Incontournable pour les sites vitrines et Boutiques en ligne`,
     },
   ],
   portfolio: [
-    { photo: "/images/home-projects-1.webp" },
-    { photo: "/images/home-projects-1.webp" },
-    { photo: "/images/home-projects-1.webp" },
-    { photo: "/images/home-projects-1.webp" },
-    { photo: "/images/home-projects-1.webp" },
-    { photo: "/images/home-projects-1.webp" },
+    {
+      photo: "/images/home-projects-1.webp",
+      name: "Glim Africa",
+      type: "Site Web",
+    },
+    {
+      photo: "/images/home-projects-1.webp",
+      name: "Glim Africa",
+      type: "Site Web",
+    },
+    {
+      photo: "/images/home-projects-1.webp",
+      name: "Glim Africa",
+      type: "Site Web",
+    },
+    {
+      photo: "/images/home-projects-1.webp",
+      name: "Glim Africa",
+      type: "Site Web",
+    },
   ],
   services: [
     {
@@ -226,18 +245,26 @@ const params = {
 
 const HomePage: NextPageWithLayout = () => {
   const solutions = data.solutions.map((solution, i) => (
-    <SolutionBlock key={"solution-" + i} {...solution} />
+    <SolutionBlock key={"solution-" + i} {...solution} index={i} />
   ));
 
   const portfolio = data.portfolio.map((project, i) => (
-    <div key={"project-" + i} className="aspect-[7/6]">
-      <Image
-        width={500}
-        height={500}
-        src={project.photo}
-        alt={"Project image - " + (i + 1)}
-        className="image-cover"
-      />
+    <div key={"project-" + i} className="group">
+      <div className="aspect-video">
+        <Image
+          width={500}
+          height={500}
+          src={project.photo}
+          alt={"Project image - " + (i + 1)}
+          className="image-cover rounded-[20px] grayscale transition-all duration-200 group-hover:grayscale-0"
+        />
+      </div>
+
+      <div className="mt-10 text-[32px]/[1.21] font-bold text-primary-900">
+        {project.name}
+      </div>
+
+      <div className="mt-2 text-sm text-secondary-400">{project.type}</div>
     </div>
   ));
 

@@ -1,13 +1,24 @@
-import SvgIcon from "@/components/ui/svg-icon";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 export default function HomeHeader() {
   return (
     <header className="relative z-0 flex flex-col items-center px-8 pb-[116px] pt-[187px] text-center">
-      <SvgIcon
-        name="home-header-bg"
-        className="image-cover absolute inset-0 -z-10"
+      <Image
+        width={4500}
+        height={2631}
+        src="/images/home-hero-lg.webp"
+        alt="Home hero background"
+        className="hidden md:block image-cover absolute inset-0 -z-10"
+      />
+
+      <Image
+        width={1125}
+        height={2047}
+        src="/images/home-hero.webp"
+        alt="Home hero background"
+        className="md:hidden image-cover absolute inset-0 -z-10"
       />
 
       <h1 className="text-[34px]/[1.21] font-black md:text-[80px]/[1.21]">
@@ -29,7 +40,7 @@ export default function HomeHeader() {
       <p className="mt-[50px]">
         <Link
           href="/contact"
-          className="rounded-none bg-white px-10 py-2.5 text-lg font-medium shadow-2xl shadow-orange outline outline-black/20"
+          className="rounded-[7px] bg-white px-10 py-2.5 text-lg font-medium shadow-2xl shadow-orange outline outline-black/20"
         >
           Nous contacter
         </Link>

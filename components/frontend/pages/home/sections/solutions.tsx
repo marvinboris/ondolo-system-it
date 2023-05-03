@@ -22,7 +22,7 @@ export default function HomeSolutionsSection({
         <p className="mt-[50px]">
           <Link
             href="/services"
-            className="rounded-none bg-primary-900 text-white px-10 py-2.5 text-sm"
+            className="rounded-[7px] bg-primary-900 text-white px-10 py-2.5 text-sm"
           >
             En Savoir Plus
           </Link>

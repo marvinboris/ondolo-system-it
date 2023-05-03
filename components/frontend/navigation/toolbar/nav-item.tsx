@@ -25,7 +25,7 @@ export default function NavItem({ href, exact, children }: NavItemProps) {
   return  (
     <Element
       href={href}
-      className="capitalize truncate font-semibold last:bg-primary-900 last:text-white last:py-2.5 last:px-10 last:rounded-none"
+      className="capitalize truncate font-semibold last:bg-primary-900 last:text-white last:py-2.5 last:px-10 last:rounded-[7px]"
     >
       {content}
     </Element>
