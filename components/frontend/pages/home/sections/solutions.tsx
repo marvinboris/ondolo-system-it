@@ -15,7 +15,7 @@ export default function HomeSolutionsSection({
           {`Des solutions sur mesure`}
         </h2>
 
-        <div className="mx-auto mt-[60px] flex max-w-3xl flex-wrap justify-center gap-10">
+        <div className="mt-[60px] flex container flex-wrap justify-center gap-10">
           {solutions}
         </div>
 

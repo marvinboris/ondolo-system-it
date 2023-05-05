@@ -1,18 +1,16 @@
-import Image from "next/image";
 import React from "react";
 
 import { NextPageWithLayout } from "./_app";
 import Layout, { Head } from "@/components/frontend/navigation/layout";
 import HomeHeader from "@/components/frontend/pages/home/header";
-import HomeActionSection from "@/components/frontend/pages/home/sections/action";
 import HomeArticlesSection from "@/components/frontend/pages/home/sections/articles";
-import HomeContactSection from "@/components/frontend/pages/home/sections/contact";
-import HomePortfolioSection from "@/components/frontend/pages/home/sections/portfolio";
 import HomeServicesSection from "@/components/frontend/pages/home/sections/services";
 import HomeSolutionsSection from "@/components/frontend/pages/home/sections/solutions";
 import ArticleBlock from "@/components/frontend/ui/blocks/article";
-import ServiceBlock from "@/components/frontend/ui/blocks/service";
 import SolutionBlock from "@/components/frontend/ui/blocks/solution";
+import PortfolioSection from "@/components/frontend/ui/sections/portfolio";
+import ActionSection from "@/components/frontend/ui/sections/action";
+import ContactSection from "@/components/frontend/ui/sections/contact";
 
 const data = {
   solutions: [
@@ -176,56 +174,18 @@ const data = {
       description: `Incontournable pour les sites vitrines et Boutiques en ligne`,
     },
   ],
-  portfolio: [
-    {
-      photo: "/images/home-projects-1.webp",
-      name: "Glim Africa",
-      type: "Site Web",
-    },
-    {
-      photo: "/images/home-projects-1.webp",
-      name: "Glim Africa",
-      type: "Site Web",
-    },
-    {
-      photo: "/images/home-projects-1.webp",
-      name: "Glim Africa",
-      type: "Site Web",
-    },
-    {
-      photo: "/images/home-projects-1.webp",
-      name: "Glim Africa",
-      type: "Site Web",
-    },
-  ],
-  services: [
-    {
-      photo: "/images/home-services-1.webp",
-      title: `Création de Site Web`,
-      description: `Nous créons des sites web professionnels, modernes et personnalisés pour répondre aux besoins de chaque client. Nous travaillons avec les dernières technologies pour garantir que votre site est rapide, sécurisé et facile à utiliser. Nous offrons également des services de référencement pour aider votre site à être mieux classé sur les moteurs de recherche.`,
-    },
-    {
-      photo: "/images/home-services-2.webp",
-      title: `Développement d'applications web et mobile`,
-      description: `Nous développons des applications web et mobiles sur mesure pour répondre aux besoins spécifiques de votre entreprise. Nous travaillons avec les dernières technologies pour garantir que votre application est rapide, sécurisée et facile à utiliser. Nous offrons également des services de maintenance pour assurer que votre application fonctionne toujours correctement.`,
-    },
-    {
-      photo: "/images/home-services-3.webp",
-      title: `Support technique`,
-      description: `Nous offrons un support technique complet pour tous nos clients. Que vous ayez besoin d'aide pour résoudre un problème technique ou pour mettre à jour votre site web, notre équipe est là pour vous aider. Nous sommes disponibles 24 heures sur 24 et 7 jours sur 7 pour répondre à vos questions.`,
-    },
-    {
-      photo: "/images/home-services-4.webp",
-      title: `Infographie`,
-      description: `Nous offrons des services d'infographie pour aider votre entreprise à communiquer efficacement avec vos clients. Que ce soit pour la création de logos, de bannières publicitaires ou de supports de marketing, notre équipe d'infographistes est là pour vous aider.`,
-    },
-  ],
   articles: [
     {
       photo: "/images/home-articles-1.webp",
       link: "#",
       title: `Comment apprendre rapidement`,
       description: `Utilisez la logique et votre imagination. L'état d'esprit est important dans la réussite. Soyez positif et détendu en ayant visualisé et préparé cette journée. Préparez vos cartes mentales avec vos mots, structurez vos idées, vous allez retenir les 20 % de connaissances qui résument 80 % du contenu à apprendre.`,
+    },
+    {
+      photo: "/images/home-articles-2.webp",
+      link: "#",
+      title: `Maîtrisez ChatGPT l’outil IA incontournable`,
+      description: `Il suffit d'écrire un premier message pour lancer une discussion avec le chatbot. Si, par défaut, tout est écrit en anglais, il est tout à fait possible de poser une question ou de soumettre une requête à ChatGPT en français, il vous répondra alors dans cette même langue.`,
     },
     {
       photo: "/images/home-articles-2.webp",
@@ -248,30 +208,6 @@ const HomePage: NextPageWithLayout = () => {
     <SolutionBlock key={"solution-" + i} {...solution} index={i} />
   ));
 
-  const portfolio = data.portfolio.map((project, i) => (
-    <div key={"project-" + i} className="group">
-      <div className="aspect-video">
-        <Image
-          width={500}
-          height={500}
-          src={project.photo}
-          alt={"Project image - " + (i + 1)}
-          className="image-cover rounded-[20px] grayscale transition-all duration-200 group-hover:grayscale-0"
-        />
-      </div>
-
-      <div className="mt-10 text-[32px]/[1.21] font-bold text-primary-900">
-        {project.name}
-      </div>
-
-      <div className="mt-2 text-sm text-secondary-400">{project.type}</div>
-    </div>
-  ));
-
-  const services = data.services.map((service, i) => (
-    <ServiceBlock key={"service-" + i} {...service} />
-  ));
-
   const articles = data.articles.map((article, i) => (
     <ArticleBlock key={"article-" + i} {...article} />
   ));
@@ -281,18 +217,12 @@ const HomePage: NextPageWithLayout = () => {
       <Head {...params} />
       <main>
         <HomeHeader />
-
         <HomeSolutionsSection solutions={solutions} />
-
-        <HomePortfolioSection portfolio={portfolio} />
-
-        <HomeActionSection />
-
-        <HomeServicesSection services={services} />
-
+        <PortfolioSection />
+        <ActionSection />
+        <HomeServicesSection />
         <HomeArticlesSection articles={articles} />
-
-        <HomeContactSection />
+        <ContactSection />
       </main>
     </>
   );

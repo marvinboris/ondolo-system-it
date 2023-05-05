@@ -5,7 +5,7 @@ import Input from "@/components/frontend/ui/form/input";
 import TextArea from "@/components/frontend/ui/form/text-area";
 import SvgIcon from "@/components/ui/svg-icon";
 
-export default function HomeContactSection() {
+export default function ContactSection() {
   return (
     <section className="pt-[60px]">
       <h2 className="text-center section-title">{`Envie de discuter ?`}</h2>

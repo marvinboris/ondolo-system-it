@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-export default function HomeActionSection() {
+export default function ActionSection() {
   return (
     <section className="mx-auto md:container">
       <div className="bg-gradient-to-r from-[#3A6098] to-[#A6CFA4] py-[30px] text-sm text-white md:rounded-[20px]">
