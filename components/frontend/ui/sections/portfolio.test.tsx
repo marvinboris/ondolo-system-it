@@ -2,34 +2,30 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import React from "react";
 
-import HomePortfolioSection from "./portfolio";
+import PortfolioSection from "./portfolio";
 
-describe("HomePortfolioSection", () => {
-  it("should render the portfolio passed as props", () => {
-    const portfolio = (
-      <>
-        <div>Project 1</div>
-        <div>Project 2</div>
-        <div>Project 3</div>
-      </>
-    );
-    render(<HomePortfolioSection portfolio={portfolio} />);
-    expect(screen.getByText("Project 1")).toBeInTheDocument();
-    expect(screen.getByText("Project 2")).toBeInTheDocument();
-    expect(screen.getByText("Project 3")).toBeInTheDocument();
+import { portfolio } from "@/utils/resources/data";
+
+describe("PortfolioSection", () => {
+  it("should render portfolio projects", () => {
+    render(<PortfolioSection />);
+    portfolio.forEach((project, i) => {
+      expect(
+        screen.getByAltText(`Project image - ${i + 1}`)
+      ).toBeInTheDocument();
+      screen.getAllByText(project.name).forEach(item => {
+        expect(item).toBeInTheDocument();
+      });
+      screen.getAllByText(project.type).forEach(item => {
+        expect(item).toBeInTheDocument();
+      })
+    });
   });
 
-  it("should render a link to /realisations", () => {
-    const portfolio = (
-      <>
-        <div>Project 1</div>
-        <div>Project 2</div>
-        <div>Project 3</div>
-      </>
-    );
-    render(<HomePortfolioSection portfolio={portfolio} />);
-    expect(
-      screen.getByRole("link", { name: /en savoir plus/i })
-    ).toHaveAttribute("href", "/realisations");
+  it("should have a link to /realisations", () => {
+    render(<PortfolioSection />);
+    const link = screen.getByText("En Savoir Plus");
+    expect(link).toBeInTheDocument();
+    expect(link).toHaveAttribute("href", "/realisations");
   });
 });
