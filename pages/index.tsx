@@ -176,19 +176,19 @@ const data = {
   ],
   articles: [
     {
-      photo: "/images/home-articles-1.webp",
+      photo: "/images/articles-1.webp",
       link: "#",
       title: `Comment apprendre rapidement`,
       description: `Utilisez la logique et votre imagination. L'état d'esprit est important dans la réussite. Soyez positif et détendu en ayant visualisé et préparé cette journée. Préparez vos cartes mentales avec vos mots, structurez vos idées, vous allez retenir les 20 % de connaissances qui résument 80 % du contenu à apprendre.`,
     },
     {
-      photo: "/images/home-articles-2.webp",
+      photo: "/images/articles-2.webp",
       link: "#",
       title: `Maîtrisez ChatGPT l’outil IA incontournable`,
       description: `Il suffit d'écrire un premier message pour lancer une discussion avec le chatbot. Si, par défaut, tout est écrit en anglais, il est tout à fait possible de poser une question ou de soumettre une requête à ChatGPT en français, il vous répondra alors dans cette même langue.`,
     },
     {
-      photo: "/images/home-articles-2.webp",
+      photo: "/images/articles-2.webp",
       link: "#",
       title: `Maîtrisez ChatGPT l’outil IA incontournable`,
       description: `Il suffit d'écrire un premier message pour lancer une discussion avec le chatbot. Si, par défaut, tout est écrit en anglais, il est tout à fait possible de poser une question ou de soumettre une requête à ChatGPT en français, il vous répondra alors dans cette même langue.`,

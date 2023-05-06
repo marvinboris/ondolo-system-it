@@ -42,7 +42,7 @@ main.page-main section {
 }
 
 .container {
-  @apply mx-auto max-w-7xl px-[15px];
+  @apply mx-auto max-w-7xl px-5;
 }
 
 .section-title {

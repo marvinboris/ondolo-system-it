@@ -57,17 +57,17 @@ interface Props {
 export default function ServicesLayout({ service }: Props) {
   return (
     <main>
-      <div className="container space-y-[120px] py-[60px]">
+      <div className="container space-y-[120px] mt-[72px] py-[60px]">
         <div className="flex items-center justify-between">
-          <div className="w-1/2 flex-none">
-            <h1 className="text-7xl font-black">{service.title}</h1>
+          <div className="w-full md:w-1/2 flex-none">
+            <h1 className="text-[34px] md:text-7xl font-black">{service.title}</h1>
 
             <div className="pt-10 text-xl font-light">
               {service.description}
             </div>
           </div>
 
-          <div className="w-[500px] flex-none">
+          <div className="hidden md:block w-[500px] flex-none">
             <Image
               width={1563}
               height={1563}
